@@ -1,0 +1,24 @@
+{
+  "name": "pendo-analytics",
+  "displayName": "Pendo Analytics",
+  "version": "1.0.0",
+  "description": "Bring Pendo analytics into Cursor with skills for account health, feature adoption, session replays, and feedback analysis",
+  "author": {
+    "name": "Pendo",
+    "email": "plugins@pendo.io"
+  },
+  "homepage": "https://github.com/pendo-io/cursor-MCP-plugin",
+  "repository": "https://github.com/pendo-io/cursor-MCP-plugin",
+  "license": "MIT",
+  "logo": "assets/avatar.png",
+  "keywords": ["pendo", "analytics", "customer-success", "product-management"],
+  "category": "utilities",
+  "tags": ["analytics", "customer-success", "feedback", "session-replay"],
+  "skills": "./skills/",
+  "mcpServers": {
+    "pendo-external": {
+      "type": "http",
+      "url": "https://app.pendo.io/mcp/v0/shttp"
+    }
+  }
+}

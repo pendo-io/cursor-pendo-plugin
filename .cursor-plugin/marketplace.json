@@ -1,24 +1,19 @@
 {
-  "name": "cursor-plugin-starters",
+  "name": "pendo-analytics",
   "owner": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Pendo",
+    "email": "plugins@pendo.io"
   },
   "metadata": {
-    "description": "Starter marketplace template for Cursor plugins",
-    "version": "0.1.0",
+    "description": "Pendo analytics for Cursor: account health, feature adoption, session replays, and feedback analysis",
+    "version": "1.0.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
     {
-      "name": "starter-simple",
-      "source": "./plugins/starter-simple",
-      "description": "Minimal plugin with rules and skills only"
-    },
-    {
-      "name": "starter-advanced",
-      "source": "./plugins/starter-advanced",
-      "description": "Full-featured plugin with rules, skills, agents, commands, hooks, and MCP"
+      "name": "pendo-analytics",
+      "source": "pendo-analytics",
+      "description": "Bring Pendo analytics into Cursor with skills for account health, feature adoption, session replays, and feedback analysis"
     }
   ]
 }
