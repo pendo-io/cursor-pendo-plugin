@@ -7,18 +7,7 @@
     "name": "Pendo",
     "email": "plugins@pendo.io"
   },
-  "homepage": "https://github.com/pendo-io/cursor-MCP-plugin",
-  "repository": "https://github.com/pendo-io/cursor-MCP-plugin",
   "license": "MIT",
-  "logo": "assets/avatar.png",
   "keywords": ["pendo", "analytics", "customer-success", "product-management"],
-  "category": "utilities",
-  "tags": ["analytics", "customer-success", "feedback", "session-replay"],
-  "skills": "./skills/",
-  "mcpServers": {
-    "pendo-external": {
-      "type": "http",
-      "url": "https://app.pendo.io/mcp/v0/shttp"
-    }
-  }
+  "logo": "assets/avatar.png"
 }

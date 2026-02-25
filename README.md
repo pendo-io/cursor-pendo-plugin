@@ -1,18 +1,51 @@
 # Pendo Analytics - Cursor Plugin
 
-Pendo analytics for Cursor: account health, feature adoption, session replays, and feedback analysis.
-
-## Plugins
-
-- **pendo-analytics**: Bring Pendo analytics into Cursor with skills for account health, feature adoption, session replays, and feedback analysis
+Bring Pendo analytics into Cursor with skills for account health, feature adoption, session replays, and feedback analysis.
 
 ## Getting started
 
-1. `.cursor-plugin/marketplace.json`: marketplace configuration.
-2. `plugins/pendo-analytics/.cursor-plugin/plugin.json`: plugin metadata.
-3. `plugins/pendo-analytics/skills/`: skill definitions.
+1. **Start Cursor with the plugin:**
+   ```bash
+   claude --plugin-dir /path/to/cursor-pendo-plugin
+   ```
 
-To add more plugins, see `docs/add-a-plugin.md`.
+2. **Authenticate the Pendo MCP server:**
+   Run the `/mcp` command inside Claude Code and follow the authentication flow.
+
+3. **Run a skill:**
+   ```
+   /account-health <account-name>
+   /feature-adoption <feature-name>
+   /feedback-analysis
+   /session-replay
+   ```
+
+## Skills
+
+| Skill | Description |
+|:------|:------------|
+| `account-health` | Prepare for a customer call by synthesizing engagement, sentiment, and feedback |
+| `feature-adoption` | Analyze feature adoption rates, identify power users vs laggards, and track trends |
+| `feedback-analysis` | Deep analysis of customer feedback - discover themes, extract insights, and identify risks |
+| `session-replay` | Find and surface relevant session replays for debugging, UX research, and understanding user behavior |
+
+## MCP Tools
+
+| Tool | Purpose |
+|:-----|:--------|
+| `activityQuery` | Engagement metrics and activity data |
+| `productEngagementScore` | PES calculations |
+| `searchEntities` | Find accounts, pages, features |
+| `accountQuery` | Account metadata |
+| `accountMetadataSchema` | Account metadata schema |
+| `visitorQuery` | Visitor metadata |
+| `sessionReplayList` | Find session recordings |
+| `generate_feedback_topics` | Cluster feedback into themes |
+| `get_feedback_insights` | Extract key insights |
+| `get_feedback_items` | Raw feedback data |
+| `guideMetrics` | Guide performance metrics |
+| `segmentList` | Available segments |
+| `list_all_applications` | List Pendo applications |
 
 ## Validation
 
@@ -22,9 +55,13 @@ node scripts/validate-template.mjs
 
 ## Submission checklist
 
-- Each plugin has a valid `.cursor-plugin/plugin.json`.
-- Plugin names are unique, lowercase, and kebab-case.
-- `.cursor-plugin/marketplace.json` entries map to real plugin folders.
-- All frontmatter metadata is present in skill files.
-- Logos are committed and referenced with relative paths.
-- `node scripts/validate-template.mjs` passes.
+- Plugin has a valid `.cursor-plugin/plugin.json`
+- Plugin name is lowercase and kebab-case
+- `.cursor-plugin/marketplace.json` entry maps to real plugin folder
+- All frontmatter metadata is present in skill files
+- Logo is committed and referenced with a relative path
+- `node scripts/validate-template.mjs` passes
+
+## License
+
+MIT

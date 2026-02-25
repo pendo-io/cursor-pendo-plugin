@@ -240,7 +240,10 @@ function resolveMarketplaceSource(source, pluginRoot) {
     return source;
   }
   const normalizedRoot = pluginRoot.replace(/\\/g, "/").replace(/\/+$/, "");
-  const normalizedSource = source.replace(/\\/g, "/");
+  let normalizedSource = source.replace(/\\/g, "/");
+  if (normalizedSource.startsWith("./")) {
+    normalizedSource = normalizedSource.slice(2);
+  }
   if (normalizedSource === normalizedRoot || normalizedSource.startsWith(`${normalizedRoot}/`)) {
     return normalizedSource;
   }
