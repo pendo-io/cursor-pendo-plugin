@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "pendo-analytics",
-      "source": "pendo-analytics",
+      "source": "./plugins/pendo-analytics",
       "description": "Bring Pendo analytics into Cursor with skills for account health, feature adoption, session replays, and feedback analysis"
     }
   ]
