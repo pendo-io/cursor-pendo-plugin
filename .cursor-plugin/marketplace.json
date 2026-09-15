@@ -5,7 +5,7 @@
     "email": "plugins@pendo.io"
   },
   "metadata": {
-    "description": "Pendo analytics for Cursor: account health, feature adoption, session replays, and feedback analysis",
+    "description": "Pendo plugins for Cursor: analytics skills and Orchestrate journey building",
     "version": "1.0.0",
     "pluginRoot": "plugins"
   },
@@ -14,6 +14,11 @@
       "name": "pendo-analytics",
       "source": "./pendo-analytics",
       "description": "Bring Pendo analytics into Cursor with skills for account health, feature adoption, session replays, and feedback analysis"
+    },
+    {
+      "name": "pendo-orchestrate",
+      "source": "./pendo-orchestrate",
+      "description": "Create, configure, and edit draft Orchestrate email journeys via Pendo MCP — multi-email journeys and conditional split flows"
     }
   ]
 }
