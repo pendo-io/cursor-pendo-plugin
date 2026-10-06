@@ -50,8 +50,10 @@ two rounds.
 
 ## Do not infer unobservable state
 
-Only report what MCP tools returned in this conversation. Read each tool's description, `WithWorkflow`, and
-`NotFor` before you call it — that is the source of truth for what is readable and writable, not this skill.
+Only report what MCP tools returned in this conversation. Read each tool's description and WORKFLOW, plus MCP server
+`instructions` for Orchestrate **write** routing (create new journey vs edit existing — do not require
+`listOrchestrateJourneys` before create-only flows). The maintained tool catalog lives on `getOrchestrateJourneySteps`
+and in server instructions — not repeated on every tool.
 
 Never say the journey is "ready", "complete", or that emails "have no content". Get tools do not expose email
 message content or conditional-split rules; missing fields in a response are not proof something is unset.
