@@ -13,8 +13,8 @@ This skill uses **Pendo MCP tools** exclusively. Invoke them as **`Pendo:<toolNa
 `Pendo:listAllApplications`, `Pendo:listOrchestrateJourneys`, `Pendo:getOrchestrateJourney`,
 `Pendo:updateOrchestrateEmailContent`).
 
-Read each tool's description, parameter schema, `WithWorkflow`, and `NotFor` before you call it. For
-`subId`, `appId`, and journey resolution, follow `references/identify-journey.md`.
+Read MCP server `instructions` for Orchestrate routing, then each tool's description, parameter schema, and WORKFLOW
+before you call it. For `subId`, `appId`, and journey resolution, follow `references/identify-journey.md`.
 
 If Orchestrate tools are unavailable or auth fails:
 [Connect to the Pendo MCP server](https://support.pendo.io/hc/en-us/articles/41102236924955-Connect-to-the-Pendo-MCP-server)
@@ -50,8 +50,10 @@ two rounds.
 
 ## Do not infer unobservable state
 
-Only report what MCP tools returned in this conversation. Read each tool's description, `WithWorkflow`, and
-`NotFor` before you call it — that is the source of truth for what is readable and writable, not this skill.
+Only report what MCP tools returned in this conversation. Read MCP server `instructions` for Orchestrate routing
+(create new journey vs edit/configure vs read metrics — do not require `listOrchestrateJourneys` before create-only
+flows). Read each tool's description and WORKFLOW before you call it — journey-wide routing is not duplicated on
+every tool.
 
 Never say the journey is "ready", "complete", or that emails "have no content". Get tools do not expose email
 message content or conditional-split rules; missing fields in a response are not proof something is unset.
@@ -95,7 +97,7 @@ request are normal — chain references in order (e.g. configure → content →
 | ----------- | ---- |
 | **Create** a new journey | `references/intake.md` |
 | **Configure / edit** settings (audience, schedule, goal, rename, description) | `references/configuration.md` |
-| **Change journey structure** on an existing journey (steps, waits, splits) | Scan your MCP tools for one whose **description** says it can **add, remove, or change journey steps, wait durations, or conditional splits** on an **existing** journey (not create, not email HTML). Read `WithWorkflow` and `NotFor` on each candidate. If none match: **Capability boundary** above |
+| **Change journey structure** on an existing journey (steps, waits, splits) | Scan your MCP tools for one whose **description** says it can **add, remove, or change journey steps, wait durations, or conditional splits** on an **existing** journey (not create, not email HTML). Read each candidate's description and WORKFLOW. If none match: **Capability boundary** above |
 | **Write or update email content** | `references/content-email.md` |
 | **Go live / activate / what's left before sending** | `references/handoff.md` |
 | **Journey performance** (opens, clicks, metrics) | No reference file. Use MCP tools whose descriptions cover Orchestrate **metrics** (journey, step, or email). Resolve `journeyId` via `references/identify-journey.md` if needed. Do not run intake or configuration for reporting-only questions. |
