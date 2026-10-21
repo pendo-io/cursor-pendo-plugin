@@ -48,7 +48,7 @@ scale. Bounced means hard bounces only.
 - Check which one before you blame the goal for missing sends.
 
 **Toggle goals.** A goal on a toggle feature counts the click whether it turned something on or off. Say
-"used the toggle", never "enabled". Read the goal item with `getEntity` to see what it is.
+"used the toggle", never "enabled". Read the goal item with `Pendo:getEntity` to see what it is.
 
 **Completed.** `visitorsCompleted` means the person reached an exit step or aged out. It is not goal attainment.
 
@@ -112,9 +112,9 @@ sample.
 **Find the outcome item** (before you say anything about results). In this order:
 1. Read the audience rule (`Pendo:getSegment`). A "never used X" or "has not done X" clause names the outcome item:
    use that exact item.
-2. The journey goal, read with `getEntity`.
-3. Search every app for the purpose's words: `searchEntities` with no `appId` (Feature, Page, TrackType), or
-   `listPagesFeaturesAndEvents` per app. Outcomes often live in another app (a community site, a docs site).
+2. The journey goal, read with `Pendo:getEntity`.
+3. Search every app for the purpose's words: `Pendo:searchEntities` with no `appId` (Feature, Page, TrackType), or
+   `Pendo:listPagesFeaturesAndEvents` per app. Outcomes often live in another app (a community site, a docs site).
 4. Keep the item with recorded events in the window (`Pendo:entityUsage`). Check events **in the item's own app**:
    pass that app's id, never the journey's app. An item in another app shows 0 events when checked in the
    wrong app.
@@ -122,8 +122,8 @@ sample.
 Never say "there's no usage data for X" until you've searched every app and checked for events.
 
 **People with no email address** (they can't be sent anything):
-- Find the email field with `visitorMetadataSchema` (often `visitor.agent.email`).
-- Call `listVisitors` on the audience segment with `groupByMetadata` set to that field, `limit` 5. The
+- Find the email field with `Pendo:visitorMetadataSchema` (often `visitor.agent.email`).
+- Call `Pendo:listVisitors` on the audience segment with `groupByMetadata` set to that field, `limit` 5. The
   "(none)" group is the count.
 - This counts **today's audience**, not the journey's entrants. It can include people who never entered and
   miss entrants who have since left. So it is supporting evidence for a *possible* cause, never a count of the
@@ -150,9 +150,9 @@ Never say "there's no usage data for X" until you've searched every app and chec
 - Compare unsubscribe rates before and after it.
 
 **Accounts.**
-- `listVisitors` on a segment returns `numAccounts`.
+- `Pendo:listVisitors` on a segment returns `numAccounts`.
 - For a recipient list you have in full (5,000 or fewer), build a segment of those visitors, or group
-  `listVisitors` by account. That gives the accounts reached.
+  `Pendo:listVisitors` by account. That gives the accounts reached.
 - If the lists are cut, say accounts weren't counted.
 
 **When a list stops at 5,000 rows**, split the read so each part fits, then add the parts up:

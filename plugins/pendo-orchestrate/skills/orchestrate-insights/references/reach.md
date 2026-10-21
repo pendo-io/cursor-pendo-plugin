@@ -46,7 +46,7 @@ Use two lists, never mixed.
 **Matched on today's audience** (supporting evidence for a possible cause, not a count of entrants):
 - **No email address.** "N of today's audience have no email address" (contract: *People with no email address*).
 - **Inactive for over 12 months,** when `reachInactiveVisitors` is false. Use `Pendo:buildPendoSegment` for a last
-  visit more than 365 days before the journey started, then `listVisitors`.
+  visit more than 365 days before the journey started, then `Pendo:listVisitors`.
 - Say plainly that today's audience isn't the entrant cohort. If it has clearly changed (new entries since,
   or a rule on recent activity), give the number as an indication only.
 

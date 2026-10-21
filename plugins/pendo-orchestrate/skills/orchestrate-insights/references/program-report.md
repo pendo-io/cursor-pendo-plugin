@@ -13,7 +13,7 @@ every email we sent in a month, with totals".
 
 1. Page `Pendo:listOrchestrateJourneys` until a short page.
 2. Page `Pendo:listOrchestrateEmails` until a short page.
-3. Split journey emails from standalone emails with `getOrchestrateEmail.attributes.journeyId`.
+3. Split journey emails from standalone emails with `Pendo:getOrchestrateEmail.attributes.journeyId`.
 4. For **every email that sent in the period**, journey and standalone alike, call `Pendo:getOrchestrateEmailMetrics`
    **twice**: once in the default scope for sent, delivered and bounced, and once with
    `metricsScope=emailsDeliveredInPeriod` for opened, clicked and their rates. Both count by event date. Journey step metrics count people by when they *entered*, so they miss sends in
