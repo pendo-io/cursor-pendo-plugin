@@ -2,11 +2,12 @@
 
 Create, configure, and edit draft Orchestrate email journeys via Pendo MCP — multi-email journeys and conditional split flows. Activation stays in the Orchestrate UI.
 
-## Skill
+## Skills
 
 | Skill | Description |
 |:------|:------------|
 | `orchestrate-journeys` | Lifecycle skill for draft Orchestrate journeys: intake, create, configure audience/schedule/goal, write email HTML, and hand off for activation in the Orchestrate UI (dispatch by user intent; content craft per message type) |
+| `orchestrate-insights` | Read-only answers on how journeys and emails are doing: journey checkup, why fewer people got a message, whether a journey changed behaviour (with its evidence level), program reports and slides, message load |
 
 ## MCP
 
