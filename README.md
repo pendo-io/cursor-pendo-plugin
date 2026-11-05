@@ -15,7 +15,7 @@ Pendo analytics and Orchestrate journey building for Cursor via MCP-backed skill
 | Plugin | Skills |
 |:-------|:-------|
 | `pendo-analytics` | `account-health`, `feature-adoption`, `feedback-analysis`, `session-replay` |
-| `pendo-orchestrate` | `orchestrate-journeys` |
+| `pendo-orchestrate` | `orchestrate-journeys`, `orchestrate-insights` |
 
 See `plugins/pendo-analytics/README.md` and `plugins/pendo-orchestrate/README.md` for details.
 
